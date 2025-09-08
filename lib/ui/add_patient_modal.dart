@@ -181,7 +181,7 @@ class _AddPatientModalState extends State<AddPatientModal> {
                                   name: _nameController.text.trim(),
                                   age: _ageController.text.trim(),
                                   status: _emailController.text.trim(),
-                                  imageUrl: 'assets/default-patient.png',
+                                  imageUrl: 'assets/user-18.jpg',
                                 );
                                 
                                 // Envoyer l'email de bienvenue
