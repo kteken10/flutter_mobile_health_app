@@ -1,41 +1,24 @@
 name: mediscanai
-description: "A new Flutter project."
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+description: "Clinical risk screening app for doctors: patients, guided clinical data entry and explained risk scores."
+publish_to: 'none'
 
-version: 1.0.0+1
+version: 2.0.0+2
 
 environment:
-  sdk: '>=3.4.3 <4.0.0'
+  sdk: ^3.8.0
 
 dependencies:
   flutter:
     sdk: flutter
-  bottom_bar: ^2.0.3  
-  flutter_svg: ^1.0.0
-  expansion_tile_card: ^3.0.0
-  shared_preferences: ^2.0.8
-  intl_phone_number_input: ^0.7.4
-  font_awesome_flutter: ^10.8.0
-  fl_chart: ^0.69.0
-  audioplayers: ^6.1.0
-
-  cupertino_icons: ^1.0.6
+  flutter_localizations:
+    sdk: flutter
+  flutter_flag_selector: ^1.0.2
   mailer: ^6.4.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
- 
- 
-  flutter_lints: ^3.0.0
+  flutter_lints: ^5.0.0
 
 flutter:
-
   uses-material-design: true
-
-  assets:
-    - assets/
-    
-
-
