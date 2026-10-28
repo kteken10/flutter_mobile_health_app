@@ -48,17 +48,19 @@ class _LoginScreenState extends State<LoginScreen> {
           padding: const EdgeInsets.fromLTRB(24, 32, 24, 24),
           children: [
             const BrandMark(),
-            const SizedBox(height: 40),
+            const SizedBox(height: 24),
+            const _Hero(),
+            const SizedBox(height: 28),
             const Text(
               'Bon retour, docteur',
-              style: TextStyle(fontSize: 30, fontWeight: FontWeight.w800, letterSpacing: -0.6),
+              style: TextStyle(fontSize: 26, fontWeight: FontWeight.w800, letterSpacing: -0.5),
             ),
             const SizedBox(height: 8),
             const Text(
               'Connectez-vous pour suivre vos patients et lancer une analyse.',
               style: TextStyle(fontSize: 15, color: AppColors.muted, height: 1.4),
             ),
-            const SizedBox(height: 32),
+            const SizedBox(height: 24),
             const _Label('Téléphone'),
             Row(
               children: [
@@ -143,6 +145,59 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+/// Bandeau d'accueil : la promesse de l'app et la médecin.
+class _Hero extends StatelessWidget {
+  const _Hero();
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      constraints: const BoxConstraints(minHeight: 168),
+      clipBehavior: Clip.antiAlias,
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(
+          colors: [Color(0xFF14B8A6), AppColors.primaryDark],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+        borderRadius: BorderRadius.circular(24),
+      ),
+      child: Stack(
+        children: [
+          Positioned(
+            right: -40,
+            top: -40,
+            child: Container(
+              width: 190,
+              height: 190,
+              decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.white.withValues(alpha: 0.1)),
+            ),
+          ),
+          Positioned(
+            right: 4,
+            bottom: 0,
+            top: 10,
+            child: Image.asset('assets/images/doctor.png', fit: BoxFit.contain, alignment: Alignment.bottomCenter),
+          ),
+          const Padding(
+            padding: EdgeInsets.fromLTRB(20, 34, 150, 34),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('Le dépistage clinique, expliqué.',
+                    style: TextStyle(color: Colors.white, fontSize: 19, fontWeight: FontWeight.w800, height: 1.25)),
+                SizedBox(height: 10),
+                Text('5 pathologies couvertes',
+                    style: TextStyle(color: Color(0xDDFFFFFF), fontSize: 13, fontWeight: FontWeight.w500)),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }

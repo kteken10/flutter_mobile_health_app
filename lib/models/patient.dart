@@ -20,6 +20,7 @@ class Patient {
     required this.email,
     required this.phone,
     this.status = PatientStatus.followUp,
+    this.photo,
   });
 
   final String id;
@@ -30,6 +31,9 @@ class Patient {
   final String email;
   final String phone;
   final PatientStatus status;
+
+  /// Portrait dans les assets ; sans photo, l'avatar affiche les initiales.
+  final String? photo;
 
   String get fullName => '$firstName $lastName';
   String get initials => '${firstName[0]}${lastName[0]}'.toUpperCase();

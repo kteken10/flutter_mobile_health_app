@@ -28,7 +28,7 @@ class PatientScreen extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    Avatar(patient.initials, size: 60),
+                    Avatar.of(patient, size: 60),
                     const SizedBox(width: 14),
                     Expanded(
                       child: Column(

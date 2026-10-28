@@ -41,7 +41,7 @@ class _PatientsScreenState extends State<PatientsScreen> {
           children: [
             Row(
               children: [
-                const Avatar('CM', size: 46),
+                const Avatar('CM', size: 46, photo: doctorPhoto),
                 const SizedBox(width: 12),
                 const Expanded(
                   child: Column(
@@ -196,7 +196,7 @@ class _PatientTile extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Avatar(patient.initials),
+          Avatar.of(patient),
           const SizedBox(width: 12),
           Expanded(
             child: Column(

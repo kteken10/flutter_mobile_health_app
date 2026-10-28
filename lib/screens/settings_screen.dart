@@ -68,7 +68,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 padding: const EdgeInsets.only(bottom: 8),
                 child: Row(
                   children: [
-                    IconTile(d.icon, d.category.color, size: 34),
+                    DiseaseArt(d, size: 36),
                     const SizedBox(width: 12),
                     Expanded(child: Text(d.name, style: const TextStyle(fontWeight: FontWeight.w600))),
                     Text('${d.params.length} paramètres', style: const TextStyle(color: AppColors.muted)),
@@ -94,7 +94,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               padding: EdgeInsets.all(18),
               child: Row(
                 children: [
-                  Avatar('CM', size: 56),
+                  Avatar('CM', size: 56, photo: doctorPhoto),
                   SizedBox(width: 14),
                   Expanded(
                     child: Column(

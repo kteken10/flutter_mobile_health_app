@@ -67,7 +67,7 @@ class _AnalysisFormScreenState extends State<AnalysisFormScreen> {
           AppCard(
             child: Row(
               children: [
-                IconTile(d.icon, d.category.color, size: 52),
+                DiseaseArt(d, size: 72),
                 const SizedBox(width: 14),
                 Expanded(
                   child: Column(
@@ -86,7 +86,7 @@ class _AnalysisFormScreenState extends State<AnalysisFormScreen> {
           const SizedBox(height: 12),
           Row(
             children: [
-              Avatar(widget.patient.initials, size: 32),
+              Avatar.of(widget.patient, size: 32),
               const SizedBox(width: 10),
               Text('${widget.patient.fullName} · ${widget.patient.age} ans',
                   style: const TextStyle(fontWeight: FontWeight.w600)),

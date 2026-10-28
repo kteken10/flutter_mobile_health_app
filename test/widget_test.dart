@@ -46,7 +46,7 @@ void main() {
 
     await tester.tap(find.text('Se connecter'));
     await tester.pumpAndSettle();
-    expect(find.text('Amina Mballa'), findsOneWidget);
+    expect(find.text('David Ekoto'), findsOneWidget);
     expect(find.byType(NavigationBar), findsOneWidget);
   });
 }

@@ -81,6 +81,7 @@ class Disease {
     required this.name,
     required this.category,
     required this.icon,
+    required this.image,
     required this.summary,
     required this.params,
     required this.assess,
@@ -90,6 +91,7 @@ class Disease {
   final String name;
   final Category category;
   final IconData icon;
+  final String image;
   final String summary;
   final List<ClinicalParam> params;
   final RiskResult Function(ClinicalValues values) assess;

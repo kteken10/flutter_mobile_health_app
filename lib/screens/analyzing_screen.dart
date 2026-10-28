@@ -85,13 +85,11 @@ class _AnalyzingScreenState extends State<AnalyzingScreen> with SingleTickerProv
                   );
                 },
                 child: Container(
-                  width: 72,
-                  height: 72,
-                  decoration: const BoxDecoration(
-                    shape: BoxShape.circle,
-                    gradient: LinearGradient(colors: [AppColors.primary, AppColors.primaryDark]),
-                  ),
-                  child: Icon(d.icon, color: Colors.white, size: 34),
+                  width: 92,
+                  height: 92,
+                  padding: const EdgeInsets.all(14),
+                  decoration: const BoxDecoration(shape: BoxShape.circle, color: Colors.white),
+                  child: Image.asset('assets/images/robot.png'),
                 ),
               ),
               const SizedBox(height: 32),

@@ -21,6 +21,7 @@ String _f(double x, [int d = 0]) => x.toStringAsFixed(d);
 
 final diabetes = Disease(
   id: 'diabetes',
+  image: 'assets/images/diseases/diabetes.png',
   name: 'Diabète de type 2',
   category: metabolism,
   icon: Icons.water_drop_rounded,
@@ -76,6 +77,7 @@ final diabetes = Disease(
 
 final obesity = Disease(
   id: 'obesity',
+  image: 'assets/images/diseases/obesity.png',
   name: 'Obésité',
   category: metabolism,
   icon: Icons.monitor_weight_rounded,
@@ -125,6 +127,7 @@ final obesity = Disease(
 
 final hypertension = Disease(
   id: 'hypertension',
+  image: 'assets/images/diseases/hypertension.png',
   name: 'Hypertension artérielle',
   category: cardio,
   icon: Icons.favorite_rounded,
@@ -181,6 +184,7 @@ final hypertension = Disease(
 
 final covid = Disease(
   id: 'covid',
+  image: 'assets/images/diseases/covid.png',
   name: 'Covid-19',
   category: infectious,
   icon: Icons.coronavirus_rounded,
@@ -223,6 +227,7 @@ final covid = Disease(
 
 final anemia = Disease(
   id: 'anemia',
+  image: 'assets/images/diseases/anemia.png',
   name: 'Anémie',
   category: hematology,
   icon: Icons.bloodtype_rounded,

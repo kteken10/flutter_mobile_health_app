@@ -3,6 +3,7 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 
 import '../models/analysis.dart';
+import '../models/disease.dart';
 import '../models/patient.dart';
 import '../models/risk.dart';
 import '../services/format.dart';
@@ -78,11 +79,17 @@ const _avatarColors = [
   Color(0xFFF59E0B), Color(0xFF0EA5E9), Color(0xFF9333EA),
 ];
 
+/// Portrait rond, ou initiales sur fond teinté quand il n'y a pas de photo.
 class Avatar extends StatelessWidget {
-  const Avatar(this.initials, {super.key, this.size = 46});
+  const Avatar(this.initials, {super.key, this.size = 46, this.photo});
+
+  Avatar.of(Patient patient, {super.key, this.size = 46})
+      : initials = patient.initials,
+        photo = patient.photo;
 
   final String initials;
   final double size;
+  final String? photo;
 
   @override
   Widget build(BuildContext context) {
@@ -91,11 +98,36 @@ class Avatar extends StatelessWidget {
       width: size,
       height: size,
       alignment: Alignment.center,
+      clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(color: color.withValues(alpha: 0.14), shape: BoxShape.circle),
-      child: Text(
-        initials,
-        style: TextStyle(color: color, fontWeight: FontWeight.w700, fontSize: size * 0.34),
+      child: photo != null
+          ? Image.asset(photo!, width: size, height: size, fit: BoxFit.cover)
+          : Text(
+              initials,
+              style: TextStyle(color: color, fontWeight: FontWeight.w700, fontSize: size * 0.34),
+            ),
+    );
+  }
+}
+
+/// Illustration d'une pathologie sur un carré arrondi teinté de sa catégorie.
+class DiseaseArt extends StatelessWidget {
+  const DiseaseArt(this.disease, {super.key, this.size = 44});
+
+  final Disease disease;
+  final double size;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: size,
+      height: size,
+      padding: EdgeInsets.all(size * 0.14),
+      decoration: BoxDecoration(
+        color: disease.category.color.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(size * 0.3),
       ),
+      child: Image.asset(disease.image, fit: BoxFit.contain),
     );
   }
 }
@@ -169,7 +201,7 @@ class AnalysisTile extends StatelessWidget {
       padding: const EdgeInsets.all(14),
       child: Row(
         children: [
-          IconTile(a.disease.icon, a.disease.category.color),
+          DiseaseArt(a.disease),
           const SizedBox(width: 12),
           Expanded(
             child: Column(

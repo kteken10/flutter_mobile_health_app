@@ -59,7 +59,7 @@ class _CatalogScreenState extends State<CatalogScreen> {
                   onTap: () => Navigator.of(context).pop(p),
                   child: Row(
                     children: [
-                      Avatar(p.initials, size: 40),
+                      Avatar.of(p, size: 40),
                       const SizedBox(width: 12),
                       Expanded(
                         child: Text(p.fullName, style: const TextStyle(fontWeight: FontWeight.w600)),
@@ -172,7 +172,7 @@ class _PatientCard extends StatelessWidget {
         children: [
           p == null
               ? const IconTile(Icons.person_outline_rounded, AppColors.primary)
-              : Avatar(p.initials, size: 44),
+              : Avatar.of(p, size: 44),
           const SizedBox(width: 12),
           Expanded(
             child: Column(
@@ -205,7 +205,7 @@ class _DiseaseCard extends StatelessWidget {
       onTap: onTap,
       child: Row(
         children: [
-          IconTile(disease.icon, disease.category.color, size: 50),
+          DiseaseArt(disease, size: 64),
           const SizedBox(width: 14),
           Expanded(
             child: Column(
